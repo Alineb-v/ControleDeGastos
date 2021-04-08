@@ -11,8 +11,11 @@ public class PagamentoRecorrenteTest {
                         Periodicidade.QUINZENAL,
                         100.0,
                         2,
-                        true);
+                        false,
+                        FormaDePagamento.CARTAO_CREDITO);
         System.out.println(pagamentoRecorrente.criarLancamentosDoMes(2021, Month.APRIL));
+
+
     }
 
 }

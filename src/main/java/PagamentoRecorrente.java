@@ -11,19 +11,24 @@ public class PagamentoRecorrente {
     private final double valor;
     private final int diaDoPrimeiroVencimento;
     private final boolean foiPago;
+    private final FormaDePagamento formaDePagamento;
 
 
     PagamentoRecorrente(String descricao,
                         Periodicidade periodicidade,
                         double valor,
-                        int diaDoPrimeiroVencimento, boolean foiPago) {
+                        int diaDoPrimeiroVencimento, boolean foiPago, FormaDePagamento formaDePagamento) {
 
         this.descricao = descricao;
         this.periodicidade = periodicidade;
         this.valor = valor;
         this.diaDoPrimeiroVencimento = diaDoPrimeiroVencimento;
         this.foiPago = foiPago;
+        this.formaDePagamento = formaDePagamento;
+
+
     }
+
 
     public List<Lancamento> criarLancamentosDoMes(int ano, Month mes) {
         LocalDate vencimento = LocalDate.of(ano, mes, diaDoPrimeiroVencimento);
@@ -34,7 +39,8 @@ public class PagamentoRecorrente {
                     this.descricao + " " + mes.getValue() + "/" + ano + " - " + ++num,
                     vencimento,
                     this.valor,
-                    this.foiPago
+                    this.foiPago,
+                    this.formaDePagamento
             ));
             vencimento = vencimento.plusDays(this.periodicidade.getQtdDias());
         }

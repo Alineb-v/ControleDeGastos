@@ -2,8 +2,7 @@ public enum Status {
 
     PAGO,
     PENDENTE,
-    ATRASADO;
-
+    ATRASADO
 
 
 }

@@ -6,14 +6,17 @@ public class Lancamento {
     private final LocalDate dataDeVencimento;
     private final double valor;
     private final boolean foiPago;
+    private FormaDePagamento formaDePagamento;
+
 
     Lancamento(String descricao,
                LocalDate dataDeVencimento,
-               double valor, boolean foiPago) {
+               double valor, boolean foiPago, FormaDePagamento formaDePagamento) {
         this.descricao = descricao;
         this.dataDeVencimento = dataDeVencimento;
         this.valor = valor;
         this.foiPago = foiPago;
+        this.formaDePagamento = formaDePagamento;
 
     }
 
@@ -42,6 +45,11 @@ public class Lancamento {
 
     public double getValor() {
         return valor;
+    }
+
+    public FormaDePagamento getFormaDePagamento(){
+        return formaDePagamento;
+
     }
 
     @Override
