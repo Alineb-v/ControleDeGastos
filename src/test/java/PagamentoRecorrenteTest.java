@@ -1,4 +1,5 @@
-import org.junit.jupiter.api.Test;
+
+import org.testng.annotations.Test;
 
 import java.time.Month;
 
@@ -9,7 +10,7 @@ public class PagamentoRecorrenteTest {
         PagamentoRecorrente pagamentoRecorrente =
                 new PagamentoRecorrente("Energia",
                         Periodicidade.QUINZENAL,
-                        100.0,
+                        53.0,
                         2,
                         false,
                         FormaDePagamento.CARTAO_CREDITO);

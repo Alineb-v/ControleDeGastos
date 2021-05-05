@@ -54,10 +54,8 @@ public class Lancamento {
 
     @Override
     public String toString() {
-        return "Lancamento{" +
-                "descricao='" + descricao + '\'' +
-                ", dataDeVencimento=" + dataDeVencimento +
-                ", valor=" + valor +
-                '}';
+        return "Descricao: " + this.descricao + ", Data de Vencimento: " + this.dataDeVencimento +
+                ", Valor: " + this.valor + ", Foi pago: " + this.foiPago + ", " +
+                "Forma de Pagamento: " + this.formaDePagamento;
     }
 }

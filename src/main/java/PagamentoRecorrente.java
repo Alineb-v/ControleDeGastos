@@ -12,6 +12,7 @@ public class PagamentoRecorrente {
     private final int diaDoPrimeiroVencimento;
     private final boolean foiPago;
     private final FormaDePagamento formaDePagamento;
+    private java.lang.Object LocalDate;
 
 
     PagamentoRecorrente(String descricao,
@@ -31,7 +32,7 @@ public class PagamentoRecorrente {
 
 
     public List<Lancamento> criarLancamentosDoMes(int ano, Month mes) {
-        LocalDate vencimento = LocalDate.of(ano, mes, diaDoPrimeiroVencimento);
+        LocalDate vencimento = java.time.LocalDate.of(ano, mes, diaDoPrimeiroVencimento);
         List<Lancamento> lancamentos = new ArrayList<>();
         int num = 0;
         while (vencimento.getMonth().equals(mes)) {
